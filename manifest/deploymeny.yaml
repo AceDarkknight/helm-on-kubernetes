@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+labels:
+    component: helm
+name: helm
+namespace: helm
+spec:
+selector:
+    matchLabels:
+    component: helm
+template:
+    metadata:
+    labels:
+        component: helm
+    spec:
+    containers:
+    - name: helm
+      command:
+        - /bin/sh
+      args:
+        - -c
+        - while true; do sleep 9999999999d; done;
+      image: dtzar/helm-kubectl:3.5.0
+      imagePullPolicy: IfNotPresent
+      resources:
+      limits:
+        cpu: 250m
+        memory: 256Mi
+      requests:
+        cpu: 250m
+        memory: 256Mi
+    restartPolicy: Always
+    serviceAccountName: helm
+    terminationGracePeriodSeconds: 30
