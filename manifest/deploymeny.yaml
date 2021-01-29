@@ -1,18 +1,18 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-labels:
-    component: helm
-name: helm
-namespace: helm
+  labels:
+      component: helm
+  name: helm
+  namespace: helm
 spec:
-selector:
+  selector:
     matchLabels:
       component: helm
-template:
+  template:
     metadata:
-    labels:
-      component: helm
+      labels:
+        component: helm
     spec:
     containers:
     - name: helm
