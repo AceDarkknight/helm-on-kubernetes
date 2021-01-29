@@ -8,11 +8,11 @@ namespace: helm
 spec:
 selector:
     matchLabels:
-    component: helm
+      component: helm
 template:
     metadata:
     labels:
-        component: helm
+      component: helm
     spec:
     containers:
     - name: helm
